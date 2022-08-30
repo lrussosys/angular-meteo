@@ -1,45 +1,49 @@
-<div class="container">
-  <div class="location-arrow">
-    <i (click)="getPosition()" class="fa-solid fa-location-arrow"></i>
-  </div>
-  <div class="city-name">
-    <h1>{{ currentWeather?.name }}</h1>
-  </div>
-  <div class="city-temperature">
-    {{ currentWeather?.main?.temp | Converter: "C" }}°
-  </div>
-
-  <div class="current-weather-more-info-wrapper">
-    <div class="current-weather-picture">
-      <img
-        src="http://openweathermap.org/img/wn/{{
-          currentWeather?.weather[0]?.icon
-        }}@2x.png"
-      />
+<div class="app-wrapper">
+  <div class="container">
+    <div class="location-arrow">
+      <i (click)="getPosition()" class="fa-solid fa-location-arrow"></i>
     </div>
-
-    <div class="current-weather-more-info">
-      <div class="info-element">
-        <div class="info-title">Umidità</div>
-        <div>{{ currentWeather?.main?.humidity }}%</div>
-      </div>
-      <div class="info-element">
-        <div class="info-title">Vento</div>
-        <div>{{ currentWeather?.wind?.speed | Converter: "m/s" }} km/h</div>
-      </div>
-      <div class="info-element">
-        <div class="info-title">Percepiti</div>
-        <div>{{ currentWeather?.main?.feels_like | Converter: "C" }}°</div>
-      </div>
+    <div class="city-name">
+      <h1>{{ currentWeather?.name }}</h1>
+    </div>
+    <div class="city-temperature">
+      {{ currentWeather?.main?.temp | Converter: "C" }}°
     </div>
   </div>
 
-  <div class="hourly-weather">
-    <div *ngFor="let d of hourlyWeather?.list" class="hourly-weather-element">
-      <div>{{ d?.dt_txt | date: "HH:mm" }}</div>
-      <img
-        src="http://openweathermap.org/img/wn/{{ d?.weather[0]?.icon }}.png"
-      />
+  <div class="container bottom">
+    <div class="current-weather-more-info-wrapper">
+      <div class="current-weather-picture">
+        <img
+          src="http://openweathermap.org/img/wn/{{
+            currentWeather?.weather[0]?.icon
+          }}@2x.png"
+        />
+      </div>
+
+      <div class="current-weather-more-info">
+        <div class="info-element">
+          <div class="info-title">Umidità</div>
+          <div>{{ currentWeather?.main?.humidity }}%</div>
+        </div>
+        <div class="info-element">
+          <div class="info-title">Vento</div>
+          <div>{{ currentWeather?.wind?.speed | Converter: "m/s" }} km/h</div>
+        </div>
+        <div class="info-element">
+          <div class="info-title">Percepiti</div>
+          <div>{{ currentWeather?.main?.feels_like | Converter: "C" }}°</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hourly-weather">
+      <div *ngFor="let d of hourlyWeather?.list" class="hourly-weather-element">
+        <div>{{ d?.dt_txt | date: "HH:mm" }}</div>
+        <img
+          src="http://openweathermap.org/img/wn/{{ d?.weather[0]?.icon }}.png"
+        />
+      </div>
     </div>
   </div>
 </div>
