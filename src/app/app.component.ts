@@ -12,49 +12,52 @@ export class AppComponent implements OnInit {
   lat: any;
   lon: any;
 
-  currentWeather:any;
-  hourlyWeather:any;
+  currentWeather: any;
+  hourlyWeather: any;
+  weatherDescription!: string;
 
   constructor(private weatherService: WeatherService) {}
 
   ngOnInit(): void {
     this.getPosition();
-
- 
   }
-
-  
 
   getPosition() {
-    navigator.geolocation.getCurrentPosition((position) => {
-      this.lat = position.coords.latitude;
-      console.log(this.lat)
-      this.lon = position.coords.longitude;
-      console.log(this.lon)
-      this.getWeather()
-      this.getHour()
-    },  error => {
-      console.error(error)
-    }, {
-     timeout:500,
-     maximumAge: 10000,
-    });
-    
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        this.lat = position.coords.latitude;
+        console.log(this.lat);
+        this.lon = position.coords.longitude;
+        console.log(this.lon);
+        this.getWeather();
+        this.getHour();
+      },
+      (error) => {
+        console.error(error);
+      },
+      {
+        timeout: 500,
+        maximumAge: 10000,
+      }
+    );
   }
 
-  getWeather(){
+  getWeather() {
     this.weatherService
       .getCurrentWeather(this.lat, this.lon)
       .subscribe((res: any) => {
-        this.currentWeather = res
+        this.currentWeather = res;
+        this.weatherDescription = res.weather[0].description.replace(' ', '_');
+        console.log(this.weatherDescription);
       });
   }
 
-  getHour(){
-    this.weatherService.getHourlyWeather(this.lat, this.lon).subscribe( (res:any) => {
-      this.hourlyWeather = res;
-      console.log(res)
-    })
+  getHour() {
+    this.weatherService
+      .getHourlyWeather(this.lat, this.lon)
+      .subscribe((res: any) => {
+        this.hourlyWeather = res;
+        console.log(res);
+      });
   }
-
 }

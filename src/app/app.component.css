@@ -1,68 +1,87 @@
 .app-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.container.top {
+  height: 150%;
+  position: relative;
+  font-family: 'Lato', sans-serif;
+}
+
+svg {
+    position: absolute;
+    bottom: 0;
+    width: 101%;
+    left: 0;
 }
 
 .container.bottom {
-    justify-content: space-between;
+  justify-content: space-between;
+}
+
+.white {
+  color: white;
 }
 
 .location-arrow {
-    align-self: flex-end;
-    font-size: 20px;
+  align-self: flex-end;
+  font-size: 20px;
 }
 
 .city-name {
-    display: flex;
-    flex-grow: 1;
-    justify-content: center;
-    align-items: flex-start;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .city-temperature {
-    height: 23%;
-    font-size: 3.5rem;
-    font-weight: 700;
-    padding-left: 1rem;
+  height: 23%;
+  font-size: 3.5rem;
+  font-weight: 700;
+  padding-left: 1rem;
 }
 
 .current-weather-more-info-wrapper {
-    display: flex;
-    width: 100%;
-    align-self: flex-end;
-    height: 28%;
-    align-items: center;
-    padding: 2rem 0;
-    flex-grow: 2;
+  display: flex;
+  width: 100%;
+  align-self: flex-end;
+  height: 28%;
+  align-items: center;
+  padding: 2rem 0;
+  flex-grow: 2;
 }
 
-.current-weather-picture, .current-weather-more-info {
-    width: 50%;
+.current-weather-picture,
+.current-weather-more-info {
+  width: 50%;
 }
 
 .current-weather-more-info {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 3rem;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: center;
 }
 
 .info-title {
-    padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  font-weight: bold;
 }
 
 .hourly-weather {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .hourly-weather-element {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
