@@ -1,0 +1,56 @@
+.location-arrow {
+    align-self: flex-end;
+    font-size: 20px;
+}
+
+.city-name {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.city-temperature {
+    height: 23%;
+    font-size: 3.5rem;
+    font-weight: 700;
+    padding-left: 1rem;
+}
+
+.current-weather-more-info-wrapper {
+    display: flex;
+    width: 100%;
+    align-self: flex-end;
+    height: 28%;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.current-weather-picture, .current-weather-more-info {
+    width: 50%;
+}
+
+.current-weather-more-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: center;
+}
+
+.info-title {
+    padding-bottom: 1rem;
+}
+
+.hourly-weather {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hourly-weather-element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
