@@ -54,6 +54,7 @@ svg {
   align-items: center;
   padding: 2rem 0;
   flex-grow: 2;
+  overflow: hidden;
 }
 
 .current-weather-picture,
@@ -87,7 +88,7 @@ svg {
   align-items: center;
   justify-content: center;
 }
-.icon{
+.icon {
   background: rgba(0, 0, 0, 0.123);
   border-radius: 20px;
 }
