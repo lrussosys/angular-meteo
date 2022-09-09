@@ -33,6 +33,7 @@
       <div
         *ngIf="currentWeather?.weather[0]?.icon"
         class="current-weather-picture"
+        class="icon"
       >
         <img
           src="http://openweathermap.org/img/wn/{{
@@ -60,7 +61,7 @@
     <div class="hourly-weather">
       <div *ngFor="let d of hourlyWeather?.list" class="hourly-weather-element">
         <div>{{ d?.dt_txt | date: "HH:mm" }}</div>
-        <div *ngIf="d?.weather[0]?.icon">
+        <div *ngIf="d?.weather[0]?.icon" class="icon">
           <img
             src="http://openweathermap.org/img/wn/{{ d?.weather[0]?.icon }}.png"
           />
