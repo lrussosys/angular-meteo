@@ -8,14 +8,15 @@
 .container.top {
   height: 150%;
   position: relative;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
+  text-shadow: 0 0 3px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
 }
 
 svg {
-    position: absolute;
-    bottom: 0;
-    width: 101%;
-    left: 0;
+  position: absolute;
+  bottom: 0;
+  width: 101%;
+  left: 0;
 }
 
 .container.bottom {

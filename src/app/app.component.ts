@@ -26,9 +26,8 @@ export class AppComponent implements OnInit {
     navigator.geolocation.getCurrentPosition(
       (position) => {
         this.lat = position.coords.latitude;
-        console.log(this.lat);
+
         this.lon = position.coords.longitude;
-        console.log(this.lon);
         this.getWeather();
         this.getHour();
       },
@@ -47,8 +46,9 @@ export class AppComponent implements OnInit {
       .getCurrentWeather(this.lat, this.lon)
       .subscribe((res: any) => {
         this.currentWeather = res;
-        this.weatherDescription = res.weather[0].description.replace(' ', '_');
-        console.log(this.weatherDescription);
+        this.weatherDescription = res.weather[0].main
+          .replace(' ', '_')
+          .toLowerCase();
       });
   }
 
@@ -57,7 +57,6 @@ export class AppComponent implements OnInit {
       .getHourlyWeather(this.lat, this.lon)
       .subscribe((res: any) => {
         this.hourlyWeather = res;
-        console.log(res);
       });
   }
 }

@@ -1,6 +1,7 @@
 <div class="app-wrapper">
   <div
     class="container top white"
+    *ngIf="weatherDescription"
     [ngStyle]="{
       background:
         'url(assets/backgrounds/' +
@@ -29,7 +30,10 @@
 
   <div class="container bottom">
     <div class="current-weather-more-info-wrapper">
-      <div class="current-weather-picture">
+      <div
+        *ngIf="currentWeather?.weather[0]?.icon"
+        class="current-weather-picture"
+      >
         <img
           src="http://openweathermap.org/img/wn/{{
             currentWeather?.weather[0]?.icon
@@ -56,9 +60,11 @@
     <div class="hourly-weather">
       <div *ngFor="let d of hourlyWeather?.list" class="hourly-weather-element">
         <div>{{ d?.dt_txt | date: "HH:mm" }}</div>
-        <img
-          src="http://openweathermap.org/img/wn/{{ d?.weather[0]?.icon }}.png"
-        />
+        <div *ngIf="d?.weather[0]?.icon">
+          <img
+            src="http://openweathermap.org/img/wn/{{ d?.weather[0]?.icon }}.png"
+          />
+        </div>
       </div>
     </div>
   </div>
